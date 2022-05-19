@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | S. Recipe</title>
+
+    <script src="js/funcoes.js"></script>
+
+    <link rel="stylesheet" href="css/login.css">
+
+</head>
+
+<body>
+    <!--INICIO HEADER-->
+    <header>
+        <nav>
+            <a class="logo" href="index.html">S. Recipe</a>
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="index.html">Categorias</a></li>
+                <li><a href="#">|</a></li>
+                <li><a href="cadastro.html">Cadastre-se</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!--FIM HEADER-->
+
+    <!--INICIO CARD DE LOGIN-->
+    <div class="container">
+        <div class="form-image">
+            <div class="form-h1-p">
+                <h1>Que bom ver você <br>por aqui!</h1>
+                <br><br>
+                <p>
+                    Seja bem-vindo e bon appetit!
+                </p>
+            </div>
+
+        </div>
+        <div class="form">
+            <form action="#">
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Login</h1>
+                    </div>
+                    <div class="login-button">
+                        <button><a href="cadastro.html">Cadastrar</a></button>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-box">
+                        <p>Entre com e-mail e senha:</p>
+                    </div>
+                        <br>
+                    <div class="input-box">
+                        <label for="email">E-mail</label>
+                        <input id="email_input" type="email" name="email" placeholder="Digite seu e-mail" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="password">Senha</label>
+                        <input id="senha_input" type="password" name="senha_input" placeholder="Digite sua senha" required>
+                    </div>
+
+                </div>
+
+                <div class="continue-button">
+                    <button onclick="entrar()"><a href="#">Entrar</a></button>
+                </div>
+
+                <div id="div_erros_login">
+
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--FIM CARD DE LOGIN-->
+    
+
+
+    <script src="js/mobile-navbar.js"></script> <!--SCRIPT DE JS DA NAVBAR-->
+
+</body>
+
+</html>
+<script>
+
+function entrar() {
+        // aguardar();
+
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+
+        if (emailVar == "" || senhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+
+                    setTimeout(function () {
+                        window.location = "dashboard/cards.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+</script>
+
+</script>

@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Sansita&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&family=Sansita&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  opacity: 0.7;
+  color:#CCA4A6;
+}
+
+.logo {
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: Sansita;
+  font-weight: bold;
+  background: #fff;
+  height: 8vh;
+}
+
+body {
+  background: url("../imgs/fundo_home.png") no-repeat center center;
+  background-size: cover;
+  height: 92vh;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+}
+
+.nav-list li {
+  letter-spacing: 3px;
+  margin-left: 32px;
+}
+
+/*INICIO Navbar responsivo*/
+.mobile-menu {
+  display: none;
+  cursor: pointer;
+}
+
+.mobile-menu div {
+  width: 32px;
+  height: 2px;
+  background: #000;
+  margin: 8px;
+  transition: 0.3s;
+}
+
+@media (max-width: 999px) {
+  body {
+    overflow-x: hidden;
+  }
+  .nav-list {
+    position: absolute;
+    top: 8vh;
+    right: 0;
+    width: 50vw;
+    height: 92vh;
+    background: #fff;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in;
+  }
+  .nav-list li {
+    margin-left: 0;
+    opacity: 0;
+  }
+  .mobile-menu {
+    display: block;
+  }
+}
+
+.nav-list.active {
+  transform: translateX(0);
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.mobile-menu.active .line1 {
+  transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.mobile-menu.active .line2 {
+  opacity: 0;
+}
+
+.mobile-menu.active .line3 {
+  transform: rotate(45deg) translate(-5px, -7px);
+}
+/*FIM Navbar responsivo*/
+
+/* INICIO Texto do centro*/
+
+.texto-sobre{
+  margin-top: 200px;
+  margin-left: 100px;
+}
+.texto-sobre h1{
+  font-size: 70px;
+  color: #CCA4A6;
+  font-family: Sansita;
+}
+.texto-sobre p{
+  font-size:20px;
+  width: 500px;
+  color: #000;
+  font-weight: bold;
+  font-family: Poppins;
+}
+
+/*FIM Texto do centro*/
+
+/*INICIO CARDS*/
+.section-div{
+  background-color: #fff;
+  width: 100%;
+  height: 90vh;
+  
+}
+
+.section-h4-p{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 200px;
+}
+
+.section-h4-p h4 {
+  margin-top:100px;
+  font-family: Sansita;
+}
+
+.section-h4-p p {
+  font-family: Poppins;
+}
+
+.section-cards1{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+.section-cards2{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  margin-left: 80px;
+  margin-right: 80px;
+}
+.card{
+  background-color: #647973;
+  width: 230vh;
+  padding: 12vh;
+  margin: 40px;
+  font-family: Sansita;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
+.card a{
+  color: #fff;
+}
+/*FIM CARDS*/
+
+/* FOOTER */
+
+.footer {
+  background-color: #CCA4A6;
+  height: 60px;
+  color: #000;
+  display: flex;
+  font-size: 15px;
+  font-family: Sansita;
+  align-items: center;
+  justify-content: center;
+}

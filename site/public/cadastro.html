@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cadastro | S. Recipe</title>
+
+    <script src="js/funcoes.js"></script>
+
+    <link rel="stylesheet" href="css/cadastro.css">
+    
+</head>
+
+<body>
+
+    <!--header inicio-->
+    <header>
+        <nav>
+            <a class="logo" href="index.html">S. Recipe</a>
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="index.html">Categorias</a></li>
+                <li><a href="#">|</a></li>
+                <li><a href="cadastro.html">Cadastre-se</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!--header fim-->
+
+    <!--INICIO CARD DE CADASTRO-->
+    <div class="container">
+        <div class="form-image">
+            <div class="form-h1-p">
+                <h1>Será um prazer <br>ter você conosco!</h1>
+                <br><br>
+                <p>
+                    Cadastre-se e acesse métricas de receitas favoritas da galera!
+                    <br>
+                    Não vai ficar de fora, né?
+                </p>
+            </div>
+
+        </div>
+        <div class="form">
+            <div class="alerta_erro">
+                <div class="card_erro" id="cardErro">
+                    <span id="mensagem_erro"></span>
+                </div>
+            </div>
+            <form action="#">
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Cadastro</h1>
+                    </div>
+                    <div class="login-button">
+                        <button><a href="login.html">Logar</a></button>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-box">
+                        <label for="nome">Nome</label>
+                        <input id="nome_input" type="text" name="nome" placeholder="Digite seu nome" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="email">E-mail</label>
+                        <input id="email_input" type="email" name="email" placeholder="Digite seu e-mail" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="password">Senha</label>
+                        <input id="senha_input" type="password" name="senha" placeholder="Digite sua senha" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="confirmPassword">Confirme sua senha</label>
+                        <input id="confirmacao_senha_input" type="password" name="confirmacao"
+                            placeholder="Digite a senha novamente" required>
+                    </div>
+
+                </div>
+
+                <div class="continue-button">
+                    <button onclick="cadastrar()"><a href="#">Continuar</a> </button>
+                </div>
+                <div id="div_erros_login">
+            </form>
+        </div>
+    </div>
+    <!--FIM CARD DE CADASTRO-->
+
+    
+    <script src="js/mobile-navbar.js"></script> <!--SCRIPT DE JS DA NAVBAR-->
+</body>
+
+</html>
+
+<script>
+    function cadastrar() {
+        aguardar();
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeVar = nome_input.value;
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+        var confirmacaoSenhaVar = confirmacao_senha_input.value;
+
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                cardErro.style.display = "block";
+
+                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+                setTimeout(() => {
+                    window.location = "login.html";
+                }, "2000")
+                
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+</script>
