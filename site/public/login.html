@@ -99,20 +99,42 @@
 <script>
 
 function entrar() {
-        // aguardar();
+        aguardar();
 
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
 
         if (emailVar == "" || senhaVar == "") {
             cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            mensagem_erro.innerHTML = "Preencha todos os campos para prosseguir!";
             finalizarAguardar();
             return false;
         }
         else {
             setInterval(sumirMensagem, 5000)
         }
+
+
+        if (senhaVar.length < 8) {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "Senha deve conter no mínimo 8 caracteres";
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1) {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "Ops, e-mail inválido! Verifique e tente novamente.";
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
 
         console.log("FORM LOGIN: ", emailVar);
         console.log("FORM SENHA: ", senhaVar);
@@ -166,7 +188,5 @@ function entrar() {
     function sumirMensagem() {
         cardErro.style.display = "none"
     }
-
-</script>
 
 </script>
