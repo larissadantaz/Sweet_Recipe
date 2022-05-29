@@ -209,7 +209,6 @@ nav {
 /*alinhando o conteudo de lanches*/
 .conteudo{
   margin-left: 50px;
-  padding: 15px;
   width: 580px;
 }
 
@@ -252,7 +251,8 @@ nav {
 .passo-a-passo{
   margin-top: 20px;
   font-family: Sansita;
-  font-size: 17px;
+  font-size: 16px;
+  width: 470px;
 }
 
 /*estilizando somente o paragrafo "Passo a passo" do conteudo passo a passo*/
@@ -272,15 +272,16 @@ nav {
   display: flex;
   align-items: center;
   flex-direction: row;
+  padding: 18px;
 }
 
 /*==============================estilizando o tamanho das imagens=================================*/
 /*pao com requeijao*/
 .img-pao-requeijao{
-  width: 600px;
+  width: 550px;
   border-radius: 20px;
   margin-top: 110px;
-  margin-left: 20px;
+  margin-left: 80px;
 }
 
 .img-pao-requeijao:hover{
@@ -292,10 +293,10 @@ transition: 1s;
 
 /*pao com frango empanado*/
 .img-pao-empanado{
-  width: 600px;
+  width: 550px;
   border-radius: 20px;
   margin-top: 110px;
-  margin-left: 20px;
+  margin-left: 80px;
 }
 .img-pao-empanado:hover{
   -webkit-transform: scale(1.1);
@@ -304,6 +305,19 @@ transition: 1s;
   transition: 1s;
   }
 
+/*bolo de caneca*/
+  .img-bolo{
+    width: 550px;
+    border-radius: 20px;
+    margin-top: 90px;
+    margin-left: 80px;
+  }
+  .img-bolo:hover{
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  transition: 1s;
+  }
 /*=============================estilizando com hover todos os h1, h2, h3 e p===========================*/
 h1:hover{
   color: #647973;
@@ -333,6 +347,7 @@ p:hover{
 .container-ingred{
   display: flex;
   justify-content: space-between;
+  font-size: 16px;
 }
 
 .container-ingred p{
