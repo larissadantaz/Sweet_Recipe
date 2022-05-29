@@ -9,7 +9,8 @@
   <title>S.Recipe | Receitas</title>
 </head>
 
-<body>
+<body onload="validarSessao()">
+
   <!--INICIO HEADER NAVBAR-->
   <header>
     <nav>
@@ -26,6 +27,7 @@
         <li><a href="#">|</a></li>
         <li><a href="#categorias">Categorias</a></li>
       </ul>
+      <p>Olá, <span id="b_usuario">usuário</span>!</p>
     </nav>
   </header>
   <!--FIM HEADER NAVBAR-->
@@ -39,6 +41,14 @@
         <span>Categorias</span>
       </div>
       <div class="section-cards1">
+
+        <div class="card">
+          <img class="imgs" src="../imgs/drink.png" alt="icon_jantar">
+          <br>
+          <a href="#bebidas">Bebidas</a>
+        </div>
+
+
         <div class="card">
           <img class="imgs" src="../imgs/comida.png" alt="icon_lanche">
           <br>
@@ -51,11 +61,6 @@
           <a href="#doces">Doces</a>
         </div>
 
-        <div class="card">
-          <img class="imgs" src="../imgs/drink.png" alt="icon_jantar">
-          <br>
-          <a href="#bebidas">Bebidas</a>
-        </div>
       </div>
     </div>
   </section>
@@ -68,7 +73,7 @@
         <div class="conteudo">
 
           <div class="titulo-conteudo">
-            <h1 style="font-size: 45px;">Bebidas</h1>
+            <h1 style="font-size: 50px;">Bebidas</h1>
           </div>
           <div class="titulo-receita">
             <h3>Smoothie de morango</h3>
@@ -106,25 +111,22 @@
           <div class="ingrediente-receita">
             <p>Ingredientes:</p>
             <ul class="lista-ingredientes">
-              <li>1 lata de leite condensado
-              <li>1 colher de sopa de manteiga</li>
-              <li>5 colheres de sopa de achocolatado</li>
-              <li>3 colheres de ovomaltine</li>
+              <li>2 bananas congeladas cortadas</li>
+              <li>1/2 caixa de leite condensado</li>
+              <li>500 ml de leite integral</li>
             </ul>
           </div>
           <div class="passo-a-passo">
             <p>Passo a passo:</p>
             <ol class="lista-passos">
-              <li>Em uma panela acrescente o leite condensado e o acholocatado e misture bem</li>
-              <li>Após isso leve ao fogo e misture até começar a desgrudar do fundo da panela</li>
-              <li>Unte um prato para colocar o brigadeiro</li>
-              <li>Despeje o ovomaltine por cima do brigadeiro e esta pronto.</li>
+              <li>Bata as fatias de banana com o leite e o leite condensado no liquidificador</li>
+              <li>Despeje em um copo e sirva-se.</li>
             </ol>
           </div>
         </div>
 
         <div>
-          <img class="img-pao-requeijao" src="../imgs/ovomaltine-brigadeiro.jpg" alt="brigadeiro-ovomaltine">
+          <img class="img-pao-requeijao" src="../imgs/banana-smoothie.jpg" alt="brigadeiro-ovomaltine">
         </div>
 
       </div>
@@ -140,7 +142,7 @@
       <div class="conteudo">
 
         <div class="titulo-conteudo">
-          <h1>Lanches</h1>
+          <h1 style="font-size: 50px;">Lanches</h1>
         </div>
         <div class="titulo-receita">
           <h3>Pão na chapa com requeijão</h3>
@@ -218,7 +220,7 @@
         <div class="conteudo">
 
           <div class="titulo-conteudo">
-            <h1 style="font-size: 45px;">Doces</h1>
+            <h1 style="font-size: 50px;">Doces</h1>
           </div>
           <div class="titulo-receita">
             <h3>Brigadeiro de colher com Ovomaltine</h3>
