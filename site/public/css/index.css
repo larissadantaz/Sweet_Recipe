@@ -121,7 +121,7 @@ body {
 /* INICIO Texto do centro*/
 
 .texto-sobre{
-  margin-top: 200px;
+  margin-top: 160px;
   margin-left: 100px;
 }
 .texto-sobre h1{
@@ -139,72 +139,16 @@ body {
 
 /*FIM Texto do centro*/
 
-/*INICIO CARDS*/
-.section-div{
-  background-color: #fff;
-  width: 100%;
-  height: 90vh;
-  
-}
-
-.section-h4-p{
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  margin-top: 200px;
-}
-
-.section-h4-p h4 {
-  margin-top:100px;
-  font-family: Sansita;
-}
-
-.section-h4-p p {
-  font-family: Poppins;
-}
-
-.section-cards1{
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-direction: row;
-  margin-left: 80px;
-  margin-right: 80px;
-}
-
-.section-cards2{
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-direction: row;
-  margin-left: 80px;
-  margin-right: 80px;
-}
-.card{
-  background-color: #647973;
-  width: 230vh;
-  padding: 12vh;
-  margin: 40px;
-  font-family: Sansita;
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  text-decoration: none;
-}
-.card a{
-  color: #fff;
-}
-/*FIM CARDS*/
-
 /* FOOTER */
 
 .footer {
   background-color: #CCA4A6;
-  height: 60px;
+  height: 50px;
   color: #000;
   display: flex;
   font-size: 15px;
   font-family: Sansita;
   align-items: center;
   justify-content: center;
+  margin-top: 120px;
 }

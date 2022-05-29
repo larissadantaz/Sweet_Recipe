@@ -1,0 +1,357 @@
+@import url('https://fonts.googleapis.com/css2?family=Sansita&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&family=Sansita&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  opacity: 0.7;
+  color:#CCA4A6;
+}
+
+.logo {
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: Sansita;
+  font-weight: bold;
+  background: #fff;
+  height: 8vh;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+}
+
+.nav-list li {
+  letter-spacing: 3px;
+  margin-left: 32px;
+}
+
+/*INICIO Navbar responsivo*/
+.mobile-menu {
+  display: none;
+  cursor: pointer;
+}
+
+.mobile-menu div {
+  width: 32px;
+  height: 2px;
+  background: #000;
+  margin: 8px;
+  transition: 0.3s;
+}
+
+@media (max-width: 999px) {
+  body {
+    overflow-x: hidden;
+  }
+  .nav-list {
+    position: absolute;
+    top: 8vh;
+    right: 0;
+    width: 50vw;
+    height: 92vh;
+    background: #fff;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in;
+  }
+  .nav-list li {
+    margin-left: 0;
+    opacity: 0;
+  }
+  .mobile-menu {
+    display: block;
+  }
+}
+
+.nav-list.active {
+  transform: translateX(0);
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.mobile-menu.active .line1 {
+  transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.mobile-menu.active .line2 {
+  opacity: 0;
+}
+
+.mobile-menu.active .line3 {
+  transform: rotate(45deg) translate(-5px, -7px);
+}
+/*FIM Navbar responsivo*/
+
+/*INICIO CARDS*/
+.section-div{
+    background-color: #ceb1b2;
+    width: 100%;
+    height: 92vh;
+    
+  }
+  
+  .section-h4-p{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .section-h4-p h4 {
+    margin-top:100px;
+    font-family: Sansita;
+    font-size: 25px;
+    color: #000;
+  }
+  
+  .section-h4-p span {
+    font-family: Poppins;
+    font-weight: bolder;
+  }
+  
+  .section-cards1{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 80px;
+    margin-right: 80px;
+  }
+  
+  .section-cards2{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 80px;
+    margin-right: 80px;
+  }
+  
+  .section-cards1 .card:hover{
+    color: #000;
+    background-color: #647973;
+    transition: 1.5s;
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  
+  .section-cards1 .card{
+    cursor: pointer;
+  }
+  
+  .card{
+    background-color: #fff;
+    width: 230vh;
+    padding: 12vh;
+    margin: 40px;
+    font-family: Sansita;
+    color: #647973;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .card a{
+    color: #000;
+    font-size: 20px;
+  }
+
+  .card .imgs{
+    width: 50px;
+  }
+  
+
+
+  /*FIM CARDS*/
+  
+  /*INICIO SECTION LANCHES*/
+
+#lanches{
+  background-color: #ffffff;
+  width: 100%;
+  height: 100vh;
+}
+
+/*alinhando o conteudo de lanches*/
+.conteudo{
+  margin-left: 50px;
+  padding: 15px;
+  width: 580px;
+}
+
+/*estilizando o titulo do conteudo "lanches"*/
+.titulo-conteudo{
+  font-family: Sansita;
+  color: #ceb1b2;
+  margin-top: 30px;
+  font-size: 30px;
+}
+
+/*estilizando o titulo do lanche em si*/
+.titulo-receita{
+  margin-top: 40px;
+  font-family: Sansita;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/*estilizando o espaço do conteudo de ingredientes*/
+.ingrediente-receita{
+  margin-top: 20px;
+  font-size: 17px;
+  font-family: Sansita;
+}
+
+/*estilizando somente o paragrafo "Ingredientes" no conteudo ingredientes*/
+.ingrediente-receita p{
+  font-weight: bold;
+}
+
+/*estilizando o espaço lista de ingredientes*/
+.lista-ingredientes{
+  margin-top: 20px;
+  font-family: Sansita;
+  margin-left: 20px;
+}
+
+/*estilizando o espaço de passo a passo*/
+.passo-a-passo{
+  margin-top: 20px;
+  font-family: Sansita;
+  font-size: 17px;
+}
+
+/*estilizando somente o paragrafo "Passo a passo" do conteudo passo a passo*/
+.passo-a-passo p{
+  font-weight: bold;
+}
+
+/*estilizando o espaço lista de passos*/
+.lista-passos{
+  margin-top: 20px;
+  font-family: Sansita;
+  margin-left: 20px;
+}
+
+/*alinhhando o conteudo e a imagem*/
+.container{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+/*==============================estilizando o tamanho das imagens=================================*/
+/*pao com requeijao*/
+.img-pao-requeijao{
+  width: 600px;
+  border-radius: 20px;
+  margin-top: 110px;
+  margin-left: 20px;
+}
+
+.img-pao-requeijao:hover{
+-webkit-transform: scale(1.1);
+-ms-transform: scale(1.1);
+transform: scale(1.1);
+transition: 1s;
+}
+
+/*pao com frango empanado*/
+.img-pao-empanado{
+  width: 600px;
+  border-radius: 20px;
+  margin-top: 110px;
+  margin-left: 20px;
+}
+.img-pao-empanado:hover{
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  transition: 1s;
+  }
+
+/*=============================estilizando com hover todos os h1, h2, h3 e p===========================*/
+h1:hover{
+  color: #647973;
+  transition: 0.3s;
+}
+h2:hover{
+  color: #647973;
+  transition: 0.3s;
+}
+h3:hover{
+  color: #647973;
+  transition: 0.3s;
+}
+p:hover{
+  color: #647973;
+  transition: 0.3s;
+}
+  /*FIM SECTION LANCHES*/
+
+  /*INICIO SECTION DOCES*/
+  #doces{
+    background-color: #ffffff;
+    width: 100%;
+    height: 100vh;
+  }
+
+.container-ingred{
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-ingred p{
+  font-weight: normal;
+}
+
+.container-passo{
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-passo p{
+  font-weight: normal;
+}
+
+.passo{
+  width: 900px;
+}
+.passo-cobertura{
+  margin-left: 40px;
+}
+  /*INICIO SECTION DOCES*/
