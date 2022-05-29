@@ -6,10 +6,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AcquaTec | Avisos</title>
-
+    <title>Comentários | S.Recipe</title>
+    <link rel="stylesheet" href="mural.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="dashboards.css">
+
     <script src="../js/funcoes.js"></script>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -18,73 +18,74 @@
         rel="stylesheet">
 </head>
 
-<body onload="validarSessao(), atualizarFeed()" style="background-color: #161618;">
+<body onload="validarSessao(), atualizarFeed()">
     <!-- <body onload="validarSessao()"> -->
 
-    <div class="janela">
-
-
-        <div class="header-left">
-
-            <h1>AcquaTec</h1>
-
-            <div class="hello">
-                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
-            </div>
-
-            <div class="btn-nav-white">
-                <a href="cards.html">
-                    <h3>Aquários</h3>
-                </a>
-            </div>
-
-            <div class="btn-nav-white">
-                <a href="./dashboard.html">
-                    <h3>Gráficos</h3>
-                </a>
-            </div>
-
-            <div class="btn-nav">
-                <h3>Mural de Avisos</h3>
-            </div>
-
-            <div class="btn-logout" onclick="limparSessao()">
-                <h3>Sair</h3>
-            </div>
-
+    <!--INICIO HEADER NAVBAR-->
+    <header>
+        <nav>
+        <a class="logo" href="index.html">S. Recipe</a>
+        <div class="mobile-menu">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
         </div>
+            <ul class="nav-list">
+                <li><a href="mural.html">Comunidade</a></li>
+                <li><a href="#">|</a></li>
+                <li><a href="dashboard.html">Tendências</a></li>
+                <li><a href="#">|</a></li>
+                <li><a href="receitas.html">Categorias</a></li>
+            </ul>
+            <p>Olá, <span id="b_usuario">usuário</span>!</p>
+            </nav>
+    </header>
+        <!--FIM HEADER NAVBAR-->
 
-        <div class="dash-right">
+    <div class="avisos">
 
-            <div class="avisos">
-                <div class="container">
-                    <h1>Publicar um aviso</h1>
-                    <div class="div-form">
-                        <form id="form_postagem" method="post" onsubmit="return publicar()">
-                            <label>
-                                Título:
-                                <br>
-                                <input name="titulo" id="titulo" maxlength="100" type="text">
-                            </label>
-                            <br>
-                            <label>
-                                Descrição (máximo de 250 caracteres):
-                                <br>
-                                <textarea name="descricao" id="textarea_descricao" maxlength="250" rows="5"></textarea>
-                            </label>
-                            <br>
-                            <button>Enviar</button>
-                        </form>
-                    </div>
-                    <h1>Mural de Avisos</h1>
-                    <div class="div-results">
-                        <div id="feed_container" class="feed-container">
-                        </div>
-                    </div>
+        <div class="container">
+
+            <div class="titulos">
+                <h1>Comunidade dos Chefs</h1>
+                <br>
+                <p>Espaço para você compartilhar com a galera as <b>suas</b> receitas favoritas!</p>
+            </div>
+
+            <div class="div-form">
+                
+                <form id="form_postagem" method="post" onsubmit="return publicar()">
+
+                    <label>
+                    <p>Título:</p>
+                    <br>
+                    <input name="titulo" id="titulo" maxlength="100" type="text">
+                    </label>
+                    <br>
+                
+                    <label>
+                    <p>Descrição (máximo de 250 caracteres):</p>
+                    <br>
+                    <textarea name="descricao" id="textarea_descricao" maxlength="250" rows="5"></textarea>
+                    </label>
+                    <br>
+                
+                    <button class="btn-enviar">Enviar</button>
+                        
+                </form>
+            </div>
+            
+            <div class="titulo-coments">
+                <h1>Receitas da Galera</h1>
+            </div>
+            <br>
+            <div class="div-results">
+                <div id="feed_container" class="feed-container">
                 </div>
             </div>
 
-
+        </div>
+    </div>
 
 
             <!-- MODAL -->
@@ -112,7 +113,7 @@
 </html>
 
 <script>
-    
+
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
     function limparFormulario() {
