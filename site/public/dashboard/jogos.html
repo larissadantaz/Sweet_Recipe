@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="../js/funcoes.js"></script>
+    <link rel="stylesheet" href="jogos.css">
+    <link rel="icon" type="imagem/png" href="../imgs/Logo SR.png" />
+
+    <title>Jogos | S. Recipe</title>
+</head>
+<body  onload="validarSessao()">
+    <!--INICIO HEADER NAVBAR-->
+  <header>
+    <nav>
+      <a class="logo" href="index.html">S. Recipe</a>
+      <div class="mobile-menu">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+      <ul class="nav-list">
+        <li><a href="mural.html">Comunidade</a></li>
+        <li><a href="#">|</a></li>
+        <li><a href="dashboard.html">Tendências</a></li>
+        <li><a href="#">|</a></li>
+        <li><a href="receitas.html">Receitas</a></li>
+        <li><a href="#">|</a></li>
+        <li><a href="jogos.html">Diversão</a></li>
+      </ul>
+      <p>Olá, <span id="b_usuario">usuário</span>!</p>
+    </nav>
+  </header>
+  <!--FIM HEADER NAVBAR-->
+
+  <section id="quiz">
+
+    <div class="quiz-section">
+
+        <!--parte inicio-->
+        <div class="card-quiz" id="inicio" style="display: block;">
+            <div class="card">
+                <h1>Quiz</h1>
+                <br><br>
+                <button onclick="iniciar()">Iniciar Quiz</button>
+            </div>
+        </div>
+
+        <!--parte 1-->
+        <div class="card-quiz" id="pergunta1" style="display: none;">
+            <div class="card">
+                <h1>Qual promoção mais mexe com você?</h1>
+                <br><br>
+                <select id="promo">
+                    <option value="choco">Promo de Chocolate</option>
+                    <option value="salg">Promo de Salgados</option>
+                </select>
+                <br><br>
+                <button onclick="proximo1()">Proxima</button>
+            </div>
+        </div>
+
+        <!--parte 2-->
+        <div class="card-quiz" id="pergunta2" style="display: none;">
+            <div class="card">
+                <h1>Você se considera pratico ou tradicional?</h1>
+                <br><br>
+                <select id="tipo">
+                    <option value="inovador">Inovador</option>
+                    <option value="tradicional">Tradicional</option>
+                </select>
+                <br><br>
+                <button onclick="ver()">Ver resultado</button>
+            </div>
+        </div>
+
+        <!--parte 3-->
+        <div class="card-quiz" id="results" style="display: none;">
+            <div class="card">
+                <h1>A receita que mais te define é...</h1>
+                <br><br>
+                <p id="resultado" style="color: white;"></p>
+                <br><br>
+                <button onclick="voltar()">Jogar novamente</button>
+            </div>
+        </div>
+
+    </div>
+
+  </section>
+
+</body>
+</html>
+
+
+<script>
+
+    var escolha1 = 0;
+    var escolha2 = 0;
+
+    function iniciar() {
+        inicio.style.display = 'none';
+        pergunta1.style.display= 'block';
+    }
+
+    function proximo1() {
+        inicio.style.display = 'none';
+        pergunta1.style.display = 'none';
+        pergunta2.style.display = 'block';
+
+        escolha1 = promo.value;
+    }
+
+    function ver() {
+        inicio.style.display = 'none';
+        pergunta1.style.display = 'none';
+        pergunta2.style.display = 'none';
+        results.style.display = 'block';
+
+        escolha2 = tipo.value;
+
+        if (escolha1 == 'choco' && escolha2 == 'tradicional') {
+            resultado.innerHTML = 'Você é um brigadeiro!'
+        } else if (escolha1 == 'choco' && escolha2 == 'inovador') {
+            resultado.innerHTML = 'Você é um bolo de caneca!'
+        } else if (escolha1 == 'salg' && escolha2 == 'tradicional') {
+            resultado.innerHTML = 'Você é um pão na chapa!'
+        } else if (escolha1 == 'salg' && escolha2 == 'inovador') {
+            resultado.innerHTML = 'Você é um Chicken Jr!'
+        }
+    }
+
+    function voltar() {
+        inicio.style.display = 'block';
+        pergunta1.style.display = 'none';
+        pergunta2.style.display = 'none';
+        results.style.display = 'none';
+    }
+
+</script>

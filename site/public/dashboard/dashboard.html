@@ -6,58 +6,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AcquaTec | Dashboards</title>
-
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="dashboards.css">
-    <script src="../js/funcoes.js"></script>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
-        <link rel="icon" type="imagem/png" href="imgs/Logo SR.png" />
+    <link rel="icon" type="imagem/png" href="imgs/Logo SR.png" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboards.css">
 
+    <link rel="stylesheet" href="jogos.css">
+    <script src="../js/funcoes.js"></script>
 
     <!-- scripts do Chart.js -->
     <script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
+
+    <title>Tendências | S. Recipe</title>
 
 </head>
 
 <body onload="validarSessao(), atualizarFeed()">
 
-    <div class="janela">
-        <div class="header-left">
-            <h1>AcquaTec</h1>
 
-            <div class="hello">
-                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
-            </div>
-
-            <div class="btn-nav-white">
-                <a href="./cards.html">
-                    <h3>Aquários</h3>
-                </a>
-            </div>
-
-            <div class="btn-nav">
-
-                <h3>Gráficos</h3>
-
-            </div>
-
-            <div class="btn-nav-white">
-                <a href="./mural.html">
-                    <h3>Mural de Avisos</h3>
-                </a>
-            </div>
-
-            <div class="btn-logout" onclick="limparSessao()">
-                <h3>Sair</h3>
-            </div>
-
-        </div>
+        <!--INICIO HEADER NAVBAR-->
+  <header>
+    <nav>
+      <a class="logo" href="index.html">S. Recipe</a>
+      <div class="mobile-menu">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+      <ul class="nav-list">
+        <li><a href="mural.html">Comunidade</a></li>
+        <li><a href="#">|</a></li>
+        <li><a href="dashboard.html">Tendências</a></li>
+        <li><a href="#">|</a></li>
+        <li><a href="receitas.html">Receitas</a></li>
+        <li><a href="#">|</a></li>
+        <li><a href="jogos.html">Diversão</a></li>
+      </ul>
+      <p>Olá, <span id="b_usuario">usuário</span>!</p>
+    </nav>
+  </header>
+  <!--FIM HEADER NAVBAR-->
 
         <div class="dash">
             <div class="btns-dash">
@@ -76,7 +67,7 @@
                 <canvas id="canvas_grafico"></canvas>
             </div>
         </div>
-    </div>
+
 
 
 </body>
