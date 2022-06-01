@@ -114,18 +114,41 @@ nav {
 
 /*INICIO QUIZ*/
 
+.titulo-inicial{
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+  font-family: Sansita;
+  color:#CCA4A6;
+}
+
 .quiz-section {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 100px;
+  flex-direction: column;
+  margin-top: 60px;
+}
+
+.quiz-section h1{
+  font-family: Sansita;
+}
+
+.quiz-section p{
+  font-family: Sansita;
+  font-size: 17px;
+  width: 300px;
+  text-align: center;
 }
 
 .card{
+  margin-top: 25px;
   background-color: #64797383;
   padding: 20px;
-  width: 350px;
-  height: 280px;
+  width: 300px;
+  height: 250px;
   display: flex;
   justify-content: center;
   align-items: center;

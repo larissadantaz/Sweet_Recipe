@@ -35,10 +35,17 @@
   </header>
   <!--FIM HEADER NAVBAR-->
 
+  <div class="titulo-inicial">
+      <h1>Área de Diversão dos Chefs</h1>
+  </div>
+
   <section id="quiz">
 
     <div class="quiz-section">
 
+        <h1>Descubra a receita que mais te define!</h1>
+        <br>
+        <p>Já imaginou com qual receita a sua personalidade mais se parece? Nesse quiz você descobrirá!</p>
         <!--parte inicio-->
         <div class="card-quiz" id="inicio" style="display: block;">
             <div class="card">
@@ -54,7 +61,7 @@
                 <h1>Qual promoção mais mexe com você?</h1>
                 <br><br>
                 <select id="promo">
-                    <option value="choco">Promo de Chocolate</option>
+                    <option value="doce">Promo de Doces</option>
                     <option value="salg">Promo de Salgados</option>
                 </select>
                 <br><br>
@@ -65,18 +72,33 @@
         <!--parte 2-->
         <div class="card-quiz" id="pergunta2" style="display: none;">
             <div class="card">
-                <h1>Você se considera pratico ou tradicional?</h1>
+                <h1>Você se considera tradicional ou moderno?</h1>
                 <br><br>
-                <select id="tipo">
-                    <option value="inovador">Inovador</option>
+                <select id="personalidade">
+                    <option value="moderno">Moderno</option>
                     <option value="tradicional">Tradicional</option>
+                </select>
+                <br><br>
+                <button onclick="proximo2()">Ver resultado</button>
+            </div>
+        </div>
+
+        <!--parte 3-->
+        <div class="card-quiz" id="pergunta3" style="display: none;">
+            <div class="card">
+                <h1>Qual prato/refeição mais te chama atenção?</h1>
+                <br><br>
+                <select id="prato_cultura">
+                    <option value="brasileiro">Brasileiro</option>
+                    <option value="americano">Americano</option>
                 </select>
                 <br><br>
                 <button onclick="ver()">Ver resultado</button>
             </div>
         </div>
 
-        <!--parte 3-->
+
+        <!--parte 4-->
         <div class="card-quiz" id="results" style="display: none;">
             <div class="card">
                 <h1>A receita que mais te define é...</h1>
@@ -99,6 +121,7 @@
 
     var escolha1 = 0;
     var escolha2 = 0;
+    var escolha3 = 0;
 
     function iniciar() {
         inicio.style.display = 'none';
@@ -113,22 +136,34 @@
         escolha1 = promo.value;
     }
 
+    function proximo2() {
+        inicio.style.display = 'none';
+        pergunta1.style.display = 'none';
+        pergunta2.style.display = 'none';
+        pergunta3.style.display = 'block';
+
+        escolha2 = personalidade.value;
+    }
+
     function ver() {
         inicio.style.display = 'none';
         pergunta1.style.display = 'none';
         pergunta2.style.display = 'none';
+        pergunta3.style.display = 'none';
         results.style.display = 'block';
 
-        escolha2 = tipo.value;
+        escolha3 = prato_cultura.value;
 
-        if (escolha1 == 'choco' && escolha2 == 'tradicional') {
-            resultado.innerHTML = 'Você é um brigadeiro!'
-        } else if (escolha1 == 'choco' && escolha2 == 'inovador') {
-            resultado.innerHTML = 'Você é um bolo de caneca!'
-        } else if (escolha1 == 'salg' && escolha2 == 'tradicional') {
-            resultado.innerHTML = 'Você é um pão na chapa!'
-        } else if (escolha1 == 'salg' && escolha2 == 'inovador') {
-            resultado.innerHTML = 'Você é um Chicken Jr!'
+        if (escolha1 == 'doce' && escolha2 == 'moderno' && escolha3 == 'americano') {
+            resultado.innerHTML = 'Smoothies de Morango e Banana'
+        } else if (escolha1 == 'salg' && escolha2 == 'tradicional' && escolha3 == 'brasileiro') {
+            resultado.innerHTML = 'Pão na Chapa!'
+        } else if (escolha1 == 'salg' && escolha2 == 'moderno' && escolha3 == 'americano') {
+            resultado.innerHTML = 'Pão com Frango Empanado!'
+        } else if (escolha1 == 'doce' && escolha2 == 'moderno' && escolha3 == 'americano') {
+            resultado.innerHTML = 'Bolo de Caneca!'
+        } else if (escolha1 == 'doce' && escolha2 == 'tradicional' && escolha3 == 'brasileiro'){
+            resultaddo.innerHTML = 'Brigadeiro de Colher!'
         }
     }
 
@@ -136,6 +171,7 @@
         inicio.style.display = 'block';
         pergunta1.style.display = 'none';
         pergunta2.style.display = 'none';
+        pergunta3.style.display = 'none';
         results.style.display = 'none';
     }
 
