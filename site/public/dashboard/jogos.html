@@ -39,82 +39,90 @@
       <h1>Área de Diversão dos Chefs</h1>
   </div>
 
-  <section id="quiz">
+    <div class="container">
 
-    <div class="quiz-section">
-
-        <h1>Descubra nesse quiz a receita que mais te define!</h1>
-        <br>
-        <!--parte inicio-->
-        <div class="card-quiz" id="inicio" style="display: block;">
-            <div class="card">
-                <h1 style="font-size: 55px;">Quiz</h1>
-                <br><br>
-                <button onclick="iniciar()">Iniciar Quiz</button>
+        <section id="quiz">
+            <div class="quiz-section">
+            <br>
+            <!--parte inicio-->
+            <div class="card-quiz" id="inicio" style="display: block;">
+                <div class="card">
+                    <h1 style="font-size: 55px;">Quiz</h1>
+                    <br>
+                    <p>Descubra a receita que mais te define!</p>
+                    <br><br>
+                    <button onclick="iniciar()">Iniciar Quiz</button>
+                </div>
             </div>
-        </div>
-
-        <!--parte 1-->
-        <div class="card-quiz" id="pergunta1" style="display: none;">
-            <div class="card">
-                <h1>Qual promoção mais mexe com você?</h1>
-                <br><br>
-                <select id="promo">
-                    <option value="doce">Promo de Doces</option>
-                    <option value="salgado">Promo de Salgados</option>
-                </select>
-                <br><br>
-                <button onclick="proximo1()">Próximo</button>
+            <!--parte 1-->
+            <div class="card-quiz" id="pergunta1" style="display: none;">
+                <div class="card">
+                    <h1>Qual promoção mais mexe com você?</h1>
+                    <br><br>
+                    <select id="promo">
+                        <option value="doce">Promo de Doces</option>
+                        <option value="salgado">Promo de Salgados</option>
+                    </select>
+                    <br><br>
+                    <button onclick="proximo1()">Próximo</button>
+                </div>
             </div>
-        </div>
-
-        <!--parte 2-->
-        <div class="card-quiz" id="pergunta2" style="display: none;">
-            <div class="card">
-                <h1>Você se considera tradicional ou moderno?</h1>
-                <br><br>
-                <select id="personalidade">
-                    <option value="moderno">Moderno</option>
-                    <option value="tradicional">Tradicional</option>
-                </select>
-                <br><br>
-                <button onclick="proximo2()">Próximo</button>
+            <!--parte 2-->
+            <div class="card-quiz" id="pergunta2" style="display: none;">
+                <div class="card">
+                    <h1>Você se considera tradicional ou moderno?</h1>
+                    <br><br>
+                    <select id="personalidade">
+                        <option value="moderno">Moderno</option>
+                        <option value="tradicional">Tradicional</option>
+                    </select>
+                    <br><br>
+                    <button onclick="proximo2()">Próximo</button>
+                </div>
             </div>
-        </div>
-
-        <!--parte 3-->
-        <div class="card-quiz" id="pergunta3" style="display: none;">
-            <div class="card">
-                <h1>Qual prato/refeição mais te chama atenção?</h1>
-                <br><br>
-                <select id="prato_cultura">
-                    <option value="brasileiro">Brasileiro</option>
-                    <option value="americano">Americano</option>
-                </select>
-                <br><br>
-                <button onclick="ver()">Ver resultado</button>
+            <!--parte 3-->
+            <div class="card-quiz" id="pergunta3" style="display: none;">
+                <div class="card">
+                    <h1>Qual prato/refeição mais te chama atenção?</h1>
+                    <br><br>
+                    <select id="prato_cultura">
+                        <option value="brasileiro">Brasileiro</option>
+                        <option value="americano">Americano</option>
+                    </select>
+                    <br><br>
+                    <button onclick="ver()">Ver resultado</button>
+                </div>
             </div>
-        </div>
+            <!--parte 4-->
+            <div class="card-quiz" id="results" style="display: none;">
+                <div class="card">
+                    <h1>A receita que mais te define é...</h1>
+                    <br>
+                    <div id="resultado"></div>
+                    <br>
+                    <p class="vt-lista" id="lista"></p>
+                    <br>
+                    <button onclick="voltar()">Jogar novamente</button>
+                    </div>
+                </div>
+            </div>
+        </section>
 
 
-        <!--parte 4-->
-        <div class="card-quiz" id="results" style="display: none;">
-            <div class="card">
-                <h1>A receita que mais te define é...</h1>
+        <section id="sorteio"  class="card">
+            <div class="sorteios">
+                <h1 style="font-size: 55px;">Sorteio</h1>
                 <br>
-                <div id="resultado"></div>
+                <p>Aperte o botão e sorteie uma receita!</p>
                 <br><br>
-                <p class="vt-lista" id="lista"></p>
+                <button onclick="sortear()">Sortear</button>
                 <br>
-                <button onclick="voltar()">Jogar novamente</button>
-
-
+                <div id="msg" style="font-size: 20px; color: #fff">
             </div>
-        </div>
+         </div>
+        </section>
 
     </div>
-
-  </section>
 
 </body>
 </html>
@@ -173,7 +181,7 @@
 
         /*VALIDAÇÕES COM CONDIÇÕES IF E VARIAVEIS*/
         if (escolha1 == 'doce' && escolha2 == 'moderno' && escolha3 == 'americano') {
-            resultado.innerHTML = 'Smoothies de Morango e Banana'
+            resultado.innerHTML = 'Smoothies de Morango e Banana!'
         } else if (escolha1 == 'salgado' && escolha2 == 'tradicional' && escolha3 == 'brasileiro') {
             resultado.innerHTML = 'Pão na Chapa!'
         } else if (escolha1 == 'salgado' && escolha2 == 'moderno' && escolha3 == 'americano') {
@@ -182,12 +190,14 @@
             resultado.innerHTML = 'Bolo de Caneca!'
         } else if (escolha1 == 'doce' && escolha2 == 'tradicional' && escolha3 == 'brasileiro'){
             resultado.innerHTML = 'Brigadeiro de Colher!'
+        } else if (escolha1 == 'salgado' && escolha2 == 'tradicional' && escolha3 == 'americano') {
+            resultado.innerHTML = 'Panqueca!'
         }
 
         /*LISTA DE ESCOLHAS COM VETOR, FOR E OP. ARITMÉTICAS*/
         lista.innerHTML = `Características escolhidas: <br>`;
         for (; contador < vt_lista.length; contador++) {
-            lista.innerHTML += `<span style="color: #fff; font-size: 20px;">${vt_lista[contador]}</span><br>`;
+            lista.innerHTML += `<span style="color: #eccfd1; font-size: 20px;">${vt_lista[contador]}</span><br>`;
         }
 
     }
@@ -198,6 +208,47 @@
         pergunta2.style.display = 'none';
         pergunta3.style.display = 'none';
         results.style.display = 'none';
+    }
+
+
+    function sortear() {
+        msg.innerHTML = '';
+
+        for (var index = 1; index <= 1; index++) {
+            var aleatorio = (Number(Math.random() * 15 + 1)).toFixed();
+            if (aleatorio == 1) {
+                msg.innerHTML += `Bolinho de Fubá`
+            } else if (aleatorio == 2){
+                msg.innerHTML += `Cookie de chocolate`
+            } else if (aleatorio == 3){
+                msg.innerHTML += `Bolinho de Chuva`
+            } else if (aleatorio == 4){
+                msg.innerHTML += `Macarronada`
+            } else if (aleatorio == 5){
+                msg.innerHTML += `Strogonoff`
+            } else if (aleatorio == 6){
+                msg.innerHTML += `Hot Dog`
+            } else if (aleatorio == 7){
+                msg.innerHTML += `Pizza Caseira`
+            } else if (aleatorio == 8){
+                msg.innerHTML += `Calabresa acebolada`
+            } else if (aleatorio == 9){
+                msg.innerHTML += `Filé Mignon`
+            } else if (aleatorio == 10){
+                msg.innerHTML += `Pão de Queijo`
+            } else if (aleatorio == 11) {
+                msg.innerHTML += `Batata Gratinada`
+            } else if (aleatorio == 12) {
+                msg.innerHTML += `Yakisoba`
+            } else if (aleatorio == 13) {
+                msg.innerHTML += `Batata Gratinada`
+            } else if (aleatorio == 14) {
+                msg.innerHTML += `Filé de Frango Grelhado`
+            } else if (aleatorio == 15) {
+                msg.innerHTML += `Mac and Cheese`
+            }
+        
+        }
     }
 
 </script>
