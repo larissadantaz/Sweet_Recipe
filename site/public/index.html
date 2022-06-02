@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home | S. Recipe</title>
-    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="stylesheet" href="css/index.css" />
     <script src="../js/funcoes.js"></script>
     <link rel="icon" type="imagem/png" href="imgs/Logo SR.png" />
   </head>
 
-  <body>
+  <body onload="contar()">
     <!--INICIO HEADER NAVBAR-->
     <header>
       <nav>
@@ -22,10 +22,10 @@
         </div>
         <ul class="nav-list">
           <li><a href="index.html">Home</a></li>
-                <li><a href="sobre.html">Sobre</a></li>
-                <li><a href="#">|</a></li>
-                <li><a href="cadastro.html">Cadastre-se</a></li>
-                <li><a href="login.html">Login</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="#">|</a></li>
+          <li><a href="cadastro.html">Cadastre-se</a></li>
+          <li><a href="login.html">Login</a></li>
         </ul>
       </nav>
     </header>
@@ -35,23 +35,68 @@
     <main>
       <div class="center">
         <div class="texto-sobre">
-          <h1>Mais que receitas, <br> prepare sorrisos!</h1>
-          <br>
-          <p>Além de refeições, sirva fatias de <b style="color:#CCA4A6;">amor</b>, floresça sua <b style="color:#CCA4A6;">criatividade</b>, <b style="color: #CCA4A6;">tempere</b> os seus dias.</p>
+          <h1>
+            Mais que receitas, <br />
+            prepare sorrisos!
+          </h1>
+          <p id="cont_usuarios" style="background-color: red;"></p>
+          <br />
+          <p>
+            Além de refeições, sirva fatias de
+            <b style="color: #cca4a6">amor</b>, floresça sua
+            <b style="color: #cca4a6">criatividade</b>,
+            <b style="color: #cca4a6">tempere</b> os seus dias.
+          </p>
         </div>
       </div>
     </main>
 
+    <!--footer inicio-->
+    <footer class="footer">
+      <div class="container">
+        <h4>Feito por Larissa Dantas - &copy; 2022</h4>
+      </div>
+    </footer>
+    <!--footer fim-->
 
-    
-<!--footer inicio-->
-<footer class="footer">
-  <div class="container">
-      <h4>Feito por Larissa Dantas - &copy; 2022</h4>
-  </div>
-</footer>
-<!--footer fim-->
-
-    <script src="js/mobile-navbar.js"></script> <!--SCRIPT DE JS DA NAVBAR-->
+    <script src="js/mobile-navbar.js"></script>
+    <!--SCRIPT DE JS DA NAVBAR-->
   </body>
 </html>
+
+<script>
+  /*add a function contar*/
+  function contar() {
+    fetch("/usuarios/contar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      }
+    })
+      .then(function (resposta) {
+        console.log("ESTOU NO THEN DO entrar()!");
+
+        if (resposta.ok) {
+          console.log(resposta);
+
+          /*chamando a resposta em uma div - inner*/
+          cont_usuarios.innerHTML = resposta.contagem
+
+          /*parametrizar as respostas do console*/
+          console.log("Deu certo a contagem !!")
+        } else {
+          console.log("Houve um erro ao tentar realizar a contagem!");
+
+          resposta.text().then((texto) => {
+            console.error(texto);
+            finalizarAguardar(texto);
+          });
+        }
+      })
+      .catch(function (erro) {
+        console.log(erro);
+      });
+
+    return false;
+  }
+</script>
