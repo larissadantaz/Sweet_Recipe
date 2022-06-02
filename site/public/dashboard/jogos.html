@@ -43,13 +43,12 @@
 
     <div class="quiz-section">
 
-        <h1>Descubra a receita que mais te define!</h1>
+        <h1>Descubra nesse quiz a receita que mais te define!</h1>
         <br>
-        <p>Já imaginou com qual receita a sua personalidade mais se parece? Nesse quiz você descobrirá!</p>
         <!--parte inicio-->
         <div class="card-quiz" id="inicio" style="display: block;">
             <div class="card">
-                <h1>Quiz</h1>
+                <h1 style="font-size: 55px;">Quiz</h1>
                 <br><br>
                 <button onclick="iniciar()">Iniciar Quiz</button>
             </div>
@@ -62,10 +61,10 @@
                 <br><br>
                 <select id="promo">
                     <option value="doce">Promo de Doces</option>
-                    <option value="salg">Promo de Salgados</option>
+                    <option value="salgado">Promo de Salgados</option>
                 </select>
                 <br><br>
-                <button onclick="proximo1()">Proxima</button>
+                <button onclick="proximo1()">Próximo</button>
             </div>
         </div>
 
@@ -79,7 +78,7 @@
                     <option value="tradicional">Tradicional</option>
                 </select>
                 <br><br>
-                <button onclick="proximo2()">Ver resultado</button>
+                <button onclick="proximo2()">Próximo</button>
             </div>
         </div>
 
@@ -102,10 +101,14 @@
         <div class="card-quiz" id="results" style="display: none;">
             <div class="card">
                 <h1>A receita que mais te define é...</h1>
+                <br>
+                <div id="resultado"></div>
                 <br><br>
-                <p id="resultado" style="color: white;"></p>
-                <br><br>
+                <p class="vt-lista" id="lista"></p>
+                <br>
                 <button onclick="voltar()">Jogar novamente</button>
+
+
             </div>
         </div>
 
@@ -122,6 +125,8 @@
     var escolha1 = 0;
     var escolha2 = 0;
     var escolha3 = 0;
+    vt_lista = [];
+    var contador = 0;
 
     function iniciar() {
         inicio.style.display = 'none';
@@ -133,7 +138,11 @@
         pergunta1.style.display = 'none';
         pergunta2.style.display = 'block';
 
+        /*variavel global que pega somente o valor selecionado desse select*/
         escolha1 = promo.value;
+
+        /*vetor que esta listando todos valores selecionados*/
+        vt_lista.push(promo.value);
     }
 
     function proximo2() {
@@ -142,7 +151,11 @@
         pergunta2.style.display = 'none';
         pergunta3.style.display = 'block';
 
+        /*variavel global que pega somente o valor selecionado desse select*/
         escolha2 = personalidade.value;
+
+        /*vetor que esta listando todos valores selecionados*/
+        vt_lista.push(personalidade.value);
     }
 
     function ver() {
@@ -152,19 +165,31 @@
         pergunta3.style.display = 'none';
         results.style.display = 'block';
 
+        /*variavel global que pega somente o valor selecionado desse select*/
         escolha3 = prato_cultura.value;
 
+        /*vetor que esta listando todos valores selecionados*/
+        vt_lista.push(prato_cultura.value);
+
+        /*VALIDAÇÕES COM CONDIÇÕES IF E VARIAVEIS*/
         if (escolha1 == 'doce' && escolha2 == 'moderno' && escolha3 == 'americano') {
             resultado.innerHTML = 'Smoothies de Morango e Banana'
-        } else if (escolha1 == 'salg' && escolha2 == 'tradicional' && escolha3 == 'brasileiro') {
+        } else if (escolha1 == 'salgado' && escolha2 == 'tradicional' && escolha3 == 'brasileiro') {
             resultado.innerHTML = 'Pão na Chapa!'
-        } else if (escolha1 == 'salg' && escolha2 == 'moderno' && escolha3 == 'americano') {
+        } else if (escolha1 == 'salgado' && escolha2 == 'moderno' && escolha3 == 'americano') {
             resultado.innerHTML = 'Pão com Frango Empanado!'
-        } else if (escolha1 == 'doce' && escolha2 == 'moderno' && escolha3 == 'americano') {
+        } else if (escolha1 == 'doce' && escolha2 == 'moderno' && escolha3 == 'brasileiro') {
             resultado.innerHTML = 'Bolo de Caneca!'
         } else if (escolha1 == 'doce' && escolha2 == 'tradicional' && escolha3 == 'brasileiro'){
-            resultaddo.innerHTML = 'Brigadeiro de Colher!'
+            resultado.innerHTML = 'Brigadeiro de Colher!'
         }
+
+        /*LISTA DE ESCOLHAS COM VETOR, FOR E OP. ARITMÉTICAS*/
+        lista.innerHTML = `Características escolhidas: <br>`;
+        for (; contador < vt_lista.length; contador++) {
+            lista.innerHTML += `<span style="color: #fff; font-size: 20px;">${vt_lista[contador]}</span><br>`;
+        }
+
     }
 
     function voltar() {

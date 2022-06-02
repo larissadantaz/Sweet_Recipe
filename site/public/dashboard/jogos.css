@@ -114,6 +114,7 @@ nav {
 
 /*INICIO QUIZ*/
 
+
 .titulo-inicial{
   font-size: 25px;
   display: flex;
@@ -129,7 +130,7 @@ nav {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 60px;
+  margin-top: 40px;
 }
 
 .quiz-section h1{
@@ -139,53 +140,73 @@ nav {
 .quiz-section p{
   font-family: Sansita;
   font-size: 17px;
-  width: 300px;
+  width: 350px;
   text-align: center;
 }
 
 .card{
-  margin-top: 25px;
+  margin-top: 10px;
   background-color: #64797383;
-  padding: 20px;
-  width: 300px;
-  height: 250px;
+  padding: 30px;
+  width: 350px;
+  height: 280px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   font-family: Sansita;
   border-radius: 20px;
+  margin-bottom: 20px;
+}
+#lista{
+  font-size: 18px
 }
 
 .card h1{
+  margin-top: 5px;
   text-align: center;
-  font-size: 28px;
+  font-size: 20px;
 }
+.card h1:hover{
+  color: #3b4744;
+  transition: 1s;
+}
+
+.card p{
+  text-align: center;
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
 .card button {
   border: none;
   border-radius: 20px;
   padding: 10px;
   width: 120px;
   font-family: Sansita;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.74);
   color: #647973;
   cursor: pointer;
   box-shadow: 10px 10px 10px rgba(58, 58, 58, 0.274);
 }
 
 .card button:hover{
-  background-color: rgba(255, 255, 255, 0.521);
+  background-color: #fff;
+  transform: scale(1.2);
+  transition: all 0.5s;
 }
 
 .card select{
   border: none;
   padding: 10px;
   border-radius: 10px;
+  width: 250px;
   background-color: rgba(255, 255, 255, 0.747);
 }
 
 #resultado{
-  font-size: 30px;
+  font-size: 40px;
   text-align: center;
+  color: #fff;
 }
 /*FIM QUIZ*/
