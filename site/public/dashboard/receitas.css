@@ -158,7 +158,7 @@ nav {
   
   .section-cards1 .card:hover{
     color: #000;
-    background-color: #647973;
+    background-color: #95aaa4;
     transition: 1.5s;
     -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);

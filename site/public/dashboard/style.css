@@ -76,6 +76,8 @@ input {
   padding: 10px;
   text-align: center;
   border-radius: 10px;
+  font-size: 15px;
+  font-family: Sansita;
 }
 
 .btn {
