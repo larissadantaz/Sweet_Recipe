@@ -12,7 +12,7 @@ router.get("/listar", function (req, res) {
 });
 
 /*add rota contar*/
-router.get("/contar", function (req, res) {
+router.post("/contar", function (req, res) {
     usuarioController.contar(req, res);
 });
 

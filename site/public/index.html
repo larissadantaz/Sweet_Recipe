@@ -36,25 +36,31 @@
       <div class="center">
         <div class="texto-sobre">
           <h1>
-            Mais que receitas, <br />
+            Mais que receitas, <br/>
             prepare sorrisos!
           </h1>
-          <p id="cont_usuarios" style="background-color: red;"></p>
-          <br />
+          <br/>
           <p>
             Além de refeições, sirva fatias de
             <b style="color: #cca4a6">amor</b>, floresça sua
             <b style="color: #cca4a6">criatividade</b>,
             <b style="color: #cca4a6">tempere</b> os seus dias.
           </p>
+          <br><br><br><br>
+        
+          <p>Já somos <span id="cont_usuarios" style="font-size: 30px;"></span> de sweet users!</p>
+          <p style="font-family: Sansita;">Faça parte da nossa comunidade!</p>
+          <a href="cadastro.html"><button id="btn_index">Cadastrar</button></a>
         </div>
+        
+        </p>
       </div>
     </main>
 
     <!--footer inicio-->
     <footer class="footer">
-      <div class="container">
-        <h4>Feito por Larissa Dantas - &copy; 2022</h4>
+      <div class="container-foo">
+        <h4>Desenvolvido por Larissa Dantas - &copy; 2022</h4>
       </div>
     </footer>
     <!--footer fim-->
@@ -79,11 +85,12 @@
         if (resposta.ok) {
           console.log(resposta);
 
-          /*chamando a resposta em uma div - inner*/
-          cont_usuarios.innerHTML = resposta.contagem
-
           /*parametrizar as respostas do console*/
           console.log("Deu certo a contagem !!")
+
+           /*chamando a resposta em uma div - inner*/
+          cont_usuarios.innerHTML = resposta.contagem;
+
         } else {
           console.log("Houve um erro ao tentar realizar a contagem!");
 

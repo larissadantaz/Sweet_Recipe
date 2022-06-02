@@ -6,7 +6,7 @@ function contar(usuarios) {
     /*nomeando count(id) como contagem*/
     var instrucao = `
         SELECT
-            count(id) contagem 
+            count(id) as contagem 
             FROM usuario;
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
