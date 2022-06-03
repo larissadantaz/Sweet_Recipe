@@ -86,10 +86,19 @@
           console.log(resposta);
 
           /*parametrizar as respostas do console*/
-          console.log("Deu certo a contagem !!")
+          console.log("Deu certo a contagem !!", resposta)
+          resposta.json().then(cont => {
+            console.log(cont);
+            console.log(JSON.stringify(cont[0].contagem));
+            var conteudo = document.getElementById("cont_usuarios")
+            var usuarios_cadastrados = cont[0].contagem;
+            conteudo.innerHTML = `${usuarios_cadastrados}`;
+          })
 
            /*chamando a resposta em uma div - inner*/
-          cont_usuarios.innerHTML = resposta.contagem;
+          //  var conteudo = document.getElementById("cont_usuarios")
+          //  var usuarios_cadastrados = cont[0].contagem;
+          //  conteudo.innerHTML = `${usuarios_cadastrados}`;
 
         } else {
           console.log("Houve um erro ao tentar realizar a contagem!");

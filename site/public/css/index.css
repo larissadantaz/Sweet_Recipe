@@ -124,6 +124,11 @@ body {
   margin-top: 70px;
   margin-left: 100px;
 }
+
+.texto-sobre h1:hover{
+  color: #647973;
+  transition: 0.5s;
+}
 .texto-sobre h1{
   font-size: 70px;
   color: #CCA4A6;
@@ -157,12 +162,12 @@ body {
 
 footer {
   background-color: #CCA4A6;
-  height: 50px;
+  height: 52px;
   color: #000;
   display: flex;
   font-size: 15px;
   font-family: Sansita;
   align-items: center;
   justify-content: center;
-  margin-top: 210px;
+  margin-top: 48px;
 }
