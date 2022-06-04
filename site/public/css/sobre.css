@@ -45,7 +45,7 @@ a {
     margin-left: 32px;
   }
   
-  /*INICIO Navbar responsivo*/
+  /* INICIO Navbar responsivo
   .mobile-menu {
     display: none;
     cursor: pointer;
@@ -110,7 +110,7 @@ a {
   
   .mobile-menu.active .line3 {
     transform: rotate(45deg) translate(-5px, -7px);
-  }
+  } */
 /*FIM header*/
 
 /* FOOTER */
