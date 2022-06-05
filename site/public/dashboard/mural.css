@@ -44,7 +44,7 @@ a {
   }
   
 /*INICIO Navbar responsivo*/
-.mobile-menu {
+/* .mobile-menu {
     display: none;
     cursor: pointer;
   }
@@ -108,11 +108,14 @@ a {
   
   .mobile-menu.active .line3 {
     transform: rotate(45deg) translate(-5px, -7px);
-  }
+  } */
   /*FIM Navbar responsivo*/
 
 /*INICIO CONTAINER DA PAG*/
 
+.body{
+  background-color: #f1e2e3;
+}
 
 .container {
     width: 80%;
@@ -178,10 +181,10 @@ a {
     width: 80px;
     margin: 10px;
   }
-.publicacao-btn-editar:hover{
-    background-color: #43504c;
 
-}
+  .publicacao-btn-editar:hover{
+    background-color: #43504c;
+  }
   
   .publicacao {
     display: flex;

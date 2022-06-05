@@ -22,7 +22,7 @@
 
 </head>
 
-<body onload="validarSessao(), atualizarFeed(), comentar()">
+<body style="background-color: #f1e2e3;" onload="validarSessao(), atualizarFeed(), comentar()">
     <!-- <body onload="validarSessao()"> -->
 
     <!--INICIO HEADER NAVBAR-->
@@ -42,6 +42,7 @@
                 <li><a href="jogos.html">Diversão</a></li>
             </ul>
             <p>Olá, <span id="b_usuario">usuário</span>!</p>
+            <p onclick="limparSessao()">Sair</p>
             </nav>
     </header>
         <!--FIM HEADER NAVBAR-->
@@ -54,7 +55,7 @@
                 <h1>Comunidade dos Chefs</h1>
                 <br>
                 <p>Espaço para você compartilhar com a galera as <b>suas</b> receitas favoritas!</p>
-                <p>Total de comentarios:  <b id="cont_aviso" style="color: #3b4744; font-size: 30px;"> </b></p>
+                <p>Total de comentários:  <b id="cont_aviso" style="color: #3b4744; font-size: 30px;"> </b></p>
             </div>
 
             <div class="div-form">

@@ -58,10 +58,7 @@ body {
   margin-left: 100px;
 }
 
-.texto-sobre h1:hover{
-  color: #647973;
-  transition: 0.5s;
-}
+
 .texto-sobre h1{
   font-size: 70px;
   color: #CCA4A6;
