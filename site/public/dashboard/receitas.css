@@ -43,9 +43,11 @@ nav {
   letter-spacing: 3px;
   margin-left: 32px;
 }
-
+.sair{
+  cursor: pointer;
+}
 /*INICIO Navbar responsivo*/
-.mobile-menu {
+/* .mobile-menu {
   display: none;
   cursor: pointer;
 }
@@ -109,7 +111,7 @@ nav {
 
 .mobile-menu.active .line3 {
   transform: rotate(45deg) translate(-5px, -7px);
-}
+} */
 /*FIM Navbar responsivo*/
 
 /*INICIO CARDS*/

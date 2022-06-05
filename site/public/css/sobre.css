@@ -44,6 +44,10 @@ a {
     letter-spacing: 3px;
     margin-left: 32px;
   }
+
+  .sair{
+    cursor: pointer;
+  }
   
   /* INICIO Navbar responsivo
   .mobile-menu {

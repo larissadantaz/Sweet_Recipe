@@ -48,7 +48,9 @@ body{
   background-color: #f1e2e3;
 }
 
-
+.sair{
+  cursor: pointer;
+}
 /*INICIO CONTEUDO TODO ALINHADO*/
 .container{
   display: flex;
