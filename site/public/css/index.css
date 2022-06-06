@@ -54,7 +54,7 @@ body {
 /* INICIO Texto do centro*/
 
 .texto-sobre{
-  margin-top: 70px;
+  margin-top: 90px;
   margin-left: 100px;
 }
 
@@ -92,12 +92,12 @@ body {
 
 footer {
   background-color: #CCA4A6;
-  height: 52px;
+  height: 55px;
   color: #000;
   display: flex;
   font-size: 15px;
   font-family: Sansita;
   align-items: center;
   justify-content: center;
-  margin-top: 81px;
+  margin-top: 120px;
 }
