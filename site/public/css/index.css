@@ -92,12 +92,13 @@ body {
 
 footer {
   background-color: #CCA4A6;
-  height: 55px;
+  height: 8vh;
   color: #000;
   display: flex;
   font-size: 15px;
   font-family: Sansita;
   align-items: center;
   justify-content: center;
-  margin-top: 120px;
+  margin-top: 180px;
 }
+
