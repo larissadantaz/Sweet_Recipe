@@ -70,7 +70,7 @@
                     <br>
                 
                     <label>
-                    <p>Descrição (máximo de 250 caracteres):</p>
+                    <p>Descrição:</p>
                     <br>
                     <textarea name="descricao" id="textarea_descricao" maxlength="250" rows="5"></textarea>
                     </label>
@@ -82,7 +82,7 @@
             </div>
             
             <div class="titulo-coments">
-                <h1>Receitas da Galera</h1>
+                <h1>Comentários da Galera</h1>
             </div>
             <br>
             <div class="div-results">
@@ -93,25 +93,8 @@
         </div>
     </div>
 
-
-            <!-- MODAL -->
-            <!-- <div id="div_modal" class="div-modal">
-                <div id="modal_backdrop" onclick="fecharModal()" class="modal-backdrop">
-                </div>
-                <div id="modal_container" class="modal-container">
-                    <button class="btn-fechar-modal" onclick="fecharModal()">X</button>
-                </div>
-            </div> -->
-
-            <!-- AGUARDAR -->
-            <!-- <div id="div_aguardar" class="div-aguardar">
-                <img src="./assets/aguarde-pink3.gif" id="img_aguarde">
-            </div>  -->
-
         </div>
     </div>
-
-
 
 
 </body>
@@ -143,10 +126,6 @@ function comentar() {
             conteudo.innerHTML = `${comentarios_cadastrados}`;
           })
 
-           /*chamando a resposta em uma div - inner*/
-          //  var conteudo = document.getElementById("cont_usuarios")
-          //  var usuarios_cadastrados = cont[0].contagem;
-          //  conteudo.innerHTML = `${usuarios_cadastrados}`;
 
         } else {
           console.log("Houve um erro ao tentar realizar a contagem!");
